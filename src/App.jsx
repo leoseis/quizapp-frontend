@@ -6,7 +6,7 @@ import Main from "./components/Main";
 
 const App = () => {
   return (
-    <div className='qpp'>
+    <div className='app'>
       <Header/>
       <Main>
         <Loader/>
