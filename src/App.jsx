@@ -3,6 +3,7 @@ import Error from "./components/Error";
 import Header from "./components/Header";
 import Loader from "./components/Loader";
 import Main from "./components/Main";
+import StartScreen from './components/StartScreen';
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
       <Main>
         <Loader/>
         <Error/>
+        <StartScreen/>
       </Main>
     </div>
   )

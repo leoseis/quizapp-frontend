@@ -4,7 +4,7 @@ const Header = () => {
   return (
     <header className="app-header">
       <TbCloudComputing style={{fontSize:"100px"}} />
-      <h1>The React Quiz</h1>
+      <h1> The React Quiz </h1>
     </header>
   );
 };
