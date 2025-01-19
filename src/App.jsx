@@ -16,10 +16,13 @@ const App = () => {
     api .get("questions")
       .then((res) => {
         console.log(res.data);
+        setQuestions(res.data)
+        setLoadingState('ready')
       })
     
       .catch((err) => {
         console.log(err.message);
+        setError(err.message)
       });
   }, []);
 
