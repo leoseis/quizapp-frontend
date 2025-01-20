@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Error = () => {
+const Error = ({error}) => {
   return (
     <p className="error" style={{marginBottom:"10px"}}>
-    <span>💥</span> Place Error messahe here
+    <span>💥</span> {error}
   </p>
   )
 }

@@ -1,10 +1,10 @@
 import React from 'react'
 
-const StartScreen = () => {
+const StartScreen = ({numQuestions}) => {
   return (
     <div className="start">
       <h2>Welcome to The React Quiz!</h2>
-      <h3>questions to test your React mastery</h3>
+      <h3>{numQuestions}  Questions to test your React mastery</h3>
       {/* {error && <Error error={error} />} */}
       <input
         placeholder="Enter username"
