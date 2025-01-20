@@ -9,6 +9,7 @@ import api from './api';
 const App = () => {
   const [loadingState, setLoadingState] = useState("loading");
   const [error, setError] = useState(null);
+  const [username, setUsername] = useState(null);
   const [questions, setQuestions] = useState([]);
   const numQuestions = questions.length;
 
@@ -35,7 +36,7 @@ const App = () => {
       <Main>
       {loadingState === "loading" && <Loader />}  
         {error && <Error error={error} />}
-        {loadingState === "ready" && <StartScreen numQuestions={numQuestions} />}
+    {loadingState === "ready" && <StartScreen username={username} setUsername={setUsername} numQuestions={numQuestions} />}
       </Main>
     </div>
   )
