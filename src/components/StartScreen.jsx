@@ -12,6 +12,7 @@ const StartScreen = ({ numQuestions, username, setUsername }) => {
       .catch(err => {
         console.error("Error:", err.message); 
       });
+      setUsername( "")
   }
 
   return (
