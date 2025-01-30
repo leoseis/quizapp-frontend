@@ -1,27 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import api from '../api';
+import Error from "./Error";
+
+
 
 const StartScreen = ({ numQuestions, username, setUsername }) => {
   const studentUsername = { username: username };
+  const [error, setError] = useState(null);
 
   function submitUsername() {
     api.post("has_taken_quiz/", studentUsername)
       .then(res => {
         console.log(res.data); 
       })
-      .catch(err => {
-        console.error("Error:", err.message); 
+      .catch((err) => {
+        setError(err.response.data.error);
       });
+
       setUsername( "")
   }
 
   return (
     <div className="start">
       <h2>Welcome to The React Quiz!</h2>
-      <h3>{numQuestions} Questions to test your React mastery</h3>
+      <h3>{numQuestions} questions to test your React mastery</h3>
+      {error && <Error error={error} />}
       <input
         placeholder="Enter username"
-        className="input-ui"
+        className="btn btn-ui"
         style={{ marginBottom: "20px", textTransform: "uppercase" }}
         value={username}
         onChange={(e) => setUsername(e.target.value)}
@@ -29,7 +35,7 @@ const StartScreen = ({ numQuestions, username, setUsername }) => {
       <button
         className="btn btn-ui"
         onClick={submitUsername}
-        disabled={!username || username.trim() === ""}
+        disabled={username === ""}
       >
         Let's start
       </button>
