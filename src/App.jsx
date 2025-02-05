@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Loader from "./components/Loader";
 import Main from "./components/Main";
 import StartScreen from './components/StartScreen';
+import Question from './components/Question';
 import api from './api';
 
 const App = () => {
@@ -36,7 +37,13 @@ const App = () => {
       <Main>
       {loadingState === "loading" && <Loader />}  
         {error && <Error error={error} />}
-    {loadingState === "ready" && <StartScreen username={username} setUsername={setUsername} numQuestions={numQuestions} />}
+    {loadingState === "ready" && 
+    <StartScreen username={username} 
+    setUsername={setUsername}
+     numQuestions={numQuestions}
+     setLoadingState={setLoadingState}
+     />}
+     {loadingState === 'active' &&<Question/>}
       </Main>
     </div>
   )

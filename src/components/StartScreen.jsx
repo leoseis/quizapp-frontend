@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import api from '../api';
 import Error from "./Error";
+ 
 
 
-
-const StartScreen = ({ numQuestions, username, setUsername }) => {
+const StartScreen = ({ numQuestions, username, setUsername,setLoadingState }) => {
   const studentUsername = { username: username };
   const [error, setError] = useState(null);
 
@@ -12,6 +12,7 @@ const StartScreen = ({ numQuestions, username, setUsername }) => {
     api.post("has_taken_quiz/", studentUsername)
       .then(res => {
         console.log(res.data); 
+        setLoadingState('active')
       })
       .catch((err) => {
         setError(err.response.data.error);
