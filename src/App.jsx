@@ -11,6 +11,7 @@ const App = () => {
   const [loadingState, setLoadingState] = useState("loading");
   const [error, setError] = useState(null);
   const [username, setUsername] = useState(null);
+  const [questionIndex, setQuestionIndex] = useState(0);
   const [questions, setQuestions] = useState([]);
   const numQuestions = questions.length;
 
@@ -43,7 +44,7 @@ const App = () => {
      numQuestions={numQuestions}
      setLoadingState={setLoadingState}
      />}
-     {loadingState === 'active' &&<Question/>}
+     {loadingState === 'active' &&<Question question={questions[0]}/>}
       </Main>
     </div>
   )

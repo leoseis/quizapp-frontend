@@ -1,9 +1,10 @@
 import React from 'react'
 
-const Question = () => {
+const Question = ({question}) => {
   return (
     <div>
-      <h1> questions</h1>
+    <h4>{question.question}</h4>
+      {/* <OptioContainer/> */}
     </div>
   )
 }

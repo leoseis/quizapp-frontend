@@ -13,6 +13,7 @@ const StartScreen = ({ numQuestions, username, setUsername,setLoadingState }) =>
       .then(res => {
         console.log(res.data); 
         setLoadingState('active')
+        localStorage.setItem("username",username)
       })
       .catch((err) => {
         setError(err.response.data.error);
