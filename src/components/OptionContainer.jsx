@@ -1,9 +1,11 @@
 import React from 'react'
 
-const OptionContainer = () => {
+const OptionContainer = ({question}) => {
+
+    const options = question.options
   return (
-    <div className='option'>
-        <button className='btn btn-option'>option</button>
+    <div className='options'>
+        {options.map((option)=><button key={option.id} className='btn btn-option'>{option.option}</button>)}
       
     </div>
   )

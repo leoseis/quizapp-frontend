@@ -5,7 +5,7 @@ const Question = ({question}) => {
   return (
     <div>
     <h4>{question.question}</h4>
-      <OptionContainer/>
+      <OptionContainer question ={question}/>
     </div>
   )
 }
