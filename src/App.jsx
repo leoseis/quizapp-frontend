@@ -14,8 +14,7 @@ const App = () => {
   const [questionIndex, setQuestionIndex] = useState(0);
   const [questions, setQuestions] = useState([]);
   const numQuestions = questions.length;
-
-
+  const [selectedOption, setSelectedOption] = useState(null);
   useEffect(function () {
     api .get("questions")
       .then((res) => {
@@ -44,7 +43,11 @@ const App = () => {
      numQuestions={numQuestions}
      setLoadingState={setLoadingState}
      />}
-     {loadingState === 'active' &&<Question question={questions[0]}/>}
+     {loadingState === 'active' &&
+     <Question question={questions[questionIndex]}
+     selectedOption={selectedOption}
+     setSelectedOption={setSelectedOption}
+     />}
       </Main>
     </div>
   )
