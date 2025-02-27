@@ -1,5 +1,5 @@
 import React from 'react'
-import { RiFunctionLine } from 'react-icons/ri'
+
 
 const OptionContainer = ({question,selectedOption,setSelectedOption}) => {
   const options = question.options
@@ -18,7 +18,7 @@ const OptionContainer = ({question,selectedOption,setSelectedOption}) => {
           className={`btn btn-option ${
             selectedOption === index ? "answer correct" : ""
           } `}
-          onClick={() => selectAnswer(index, option)}
+          onClick={() => selectAnswer(index, )}
         >
           {option.option}
         </button>
