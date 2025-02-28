@@ -52,7 +52,7 @@ const App = () => {
      setSelectedOption={setSelectedOption}
      
      />
-     <Nextbutton/>
+     <Nextbutton selectedOption={selectedOption} />
      </>}
       </Main>
     </div>

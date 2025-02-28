@@ -1,6 +1,7 @@
 import React from 'react'
 
-const Nextbutton = () => {
+const Nextbutton = ({selectedOption}) => {
+    if(selectedOption===null) return null
   return (
     <button className='btn btn-ui'>
         Next
