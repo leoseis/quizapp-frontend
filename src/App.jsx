@@ -52,7 +52,7 @@ const App = () => {
      setSelectedOption={setSelectedOption}
      
      />
-    <Nextbutton selectedOption={selectedOption}setQuestionIndex={setQuestionIndex} />
+    <Nextbutton selectedOption={selectedOption}setQuestionIndex={setQuestionIndex}setSelectedOption={setSelectedOption} />
      </>}
       </Main>
     </div>
