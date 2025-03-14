@@ -6,7 +6,7 @@ import Main from "./components/Main";
 import StartScreen from './components/StartScreen';
 import Question from './components/Question';
 import api from './api';
-import Nextbutton from './components/Nextbutton';
+import NextButton from './components/Nextbutton';
 
 const App = () => {
   const [loadingState, setLoadingState] = useState("loading");
@@ -52,7 +52,14 @@ const App = () => {
      setSelectedOption={setSelectedOption}
      
      />
-    <Nextbutton selectedOption={selectedOption}setQuestionIndex={setQuestionIndex}setSelectedOption={setSelectedOption} />
+    <NextButton
+     selectedOption={selectedOption}
+     setQuestionIndex={setQuestionIndex}
+     setSelectedOption={setSelectedOption} 
+     numQuestions={numQuestions}
+     questionIndex={questionIndex}
+     />
+     
      </>}
       </Main>
     </div>
