@@ -16,6 +16,11 @@ const App = () => {
   const [questions, setQuestions] = useState([]);
   const numQuestions = questions.length;
   const [selectedOption, setSelectedOption] = useState(null);
+  const [correctOption, setCorrectOption] = useState(null);
+  const [studentScore, setStudentScore] = useState(0);
+
+
+
   useEffect(function () {
     api .get("questions")
       .then((res) => {
@@ -35,6 +40,7 @@ const App = () => {
   return (
     <div className='app'>
       <Header/>
+      <h4> score: {studentScore}</h4>
       <Main>
       {loadingState === "loading" && <Loader />}  
         {error && <Error error={error} />}
@@ -50,7 +56,7 @@ const App = () => {
       question={questions[questionIndex]}
      selectedOption={selectedOption}
      setSelectedOption={setSelectedOption}
-     
+     setCorrectOption={setCorrectOption}
      />
     <NextButton
      selectedOption={selectedOption}
@@ -58,6 +64,9 @@ const App = () => {
      setSelectedOption={setSelectedOption} 
      numQuestions={numQuestions}
      questionIndex={questionIndex}
+     correctOption={correctOption}
+     setStudentScore={setStudentScore}
+     
      />
      
      </>}

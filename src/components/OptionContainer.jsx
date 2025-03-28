@@ -1,12 +1,14 @@
 import React from 'react'
 
 
-const OptionContainer = ({question,selectedOption,setSelectedOption}) => {
+const OptionContainer = ({question,selectedOption,setSelectedOption,setCorrectOption}) => {
   const options = question.options
 
-  function selectAnswer(index) {
+  function selectAnswer(index,option) {
     setSelectedOption(index)
-    
+    if(option.is_correct === true){
+      setCorrectOption(index)
+    }
   }
 
     
@@ -18,7 +20,7 @@ const OptionContainer = ({question,selectedOption,setSelectedOption}) => {
           className={`btn btn-option ${
             selectedOption === index ? "answer correct" : ""
           } `}
-          onClick={() => selectAnswer(index, )}
+          onClick={() => selectAnswer(index, option)}
         >
           {option.option}
         </button>

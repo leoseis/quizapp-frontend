@@ -5,14 +5,20 @@ const NextButton = ({
   setQuestionIndex,
   setSelectedOption,
   numQuestions,
-  questionIndex
+  questionIndex,
+  correctOption,
+  setStudentScore
 }) => {
   if (selectedOption === null) return null;
 
   function NextQuestion() {
     setQuestionIndex((curr) => curr + 1);
+    if(selectedOption === correctOption){
+        setStudentScore(curr => curr + 5)
+    }
     setSelectedOption(null);
   }
+
     
     
 

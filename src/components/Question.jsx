@@ -1,7 +1,7 @@
 import React from 'react'
 import OptionContainer from './OptionContainer'
 
-const Question = ({question,selectedOption,setSelectedOption}) => {
+const Question = ({question,selectedOption,setSelectedOption,setCorrectOption}) => {
   return (
     <div>
     <h4>{question.question}</h4>
@@ -9,7 +9,7 @@ const Question = ({question,selectedOption,setSelectedOption}) => {
        question ={question}
        setSelectedOption ={setSelectedOption}
        selectedOption = {selectedOption}
-       
+       setCorrectOption= {setCorrectOption}
        />
     </div>
   )
