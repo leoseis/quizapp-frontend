@@ -46,3 +46,4 @@ const StartScreen = ({ numQuestions, username, setUsername,setLoadingState }) =>
 };
 
 export default StartScreen;
+                                    
