@@ -25,7 +25,7 @@ const NextButton = ({
   if (questionIndex === numQuestions - 1) {      //geting the last question 
     return (
       <button className="btn btn-ui">
-        Finish
+        Submit
       </button>
     );
   }
@@ -39,3 +39,4 @@ const NextButton = ({
 };
 
 export default NextButton;
+                                        
