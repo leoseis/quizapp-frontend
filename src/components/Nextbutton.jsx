@@ -7,7 +7,8 @@ const NextButton = ({
   numQuestions,
   questionIndex,
   correctOption,
-  setStudentScore
+  setStudentScore,
+  setLoadingState
 }) => {
   if (selectedOption === null) return null;
 
@@ -17,6 +18,11 @@ const NextButton = ({
         setStudentScore(curr => curr + 5)
     }
     setSelectedOption(null);
+
+  }
+
+  function submitQuiz(){
+    setLoadingState('finished')
   }
 
     
@@ -24,7 +30,7 @@ const NextButton = ({
 
   if (questionIndex === numQuestions - 1) {      //geting the last question 
     return (
-      <button className="btn btn-ui">
+      <button className="btn btn-ui" onClick={submitQuiz}>
         Submit
       </button>
     );

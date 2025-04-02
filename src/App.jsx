@@ -7,6 +7,8 @@ import StartScreen from './components/StartScreen';
 import Question from './components/Question';
 import api from './api';
 import NextButton from './components/Nextbutton';
+import FinishedScreen from './components/FinishedScreen';
+
 
 const App = () => {
   const [loadingState, setLoadingState] = useState("loading");
@@ -66,10 +68,12 @@ const App = () => {
      questionIndex={questionIndex}
      correctOption={correctOption}
      setStudentScore={setStudentScore}
-     
+     setLoadingState={setLoadingState}
      />
      
      </>}
+
+     {loadingState ==='finished'&&<FinishedScreen/>}
       </Main>
     </div>
   )
