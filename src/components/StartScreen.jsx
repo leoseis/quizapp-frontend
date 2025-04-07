@@ -19,7 +19,7 @@ const StartScreen = ({ numQuestions, username, setUsername,setLoadingState }) =>
         setError(err.response.data.error);
       });
 
-      setUsername( "")
+     
   }
 
   return (

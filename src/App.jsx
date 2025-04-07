@@ -16,7 +16,9 @@ const App = () => {
   const [username, setUsername] = useState(null);
   const [questionIndex, setQuestionIndex] = useState(0);
   const [questions, setQuestions] = useState([]);
+  const scorePerQuestion = 5;
   const numQuestions = questions.length;
+  const quizTotalScore = numQuestions * scorePerQuestion;
   const [selectedOption, setSelectedOption] = useState(null);
   const [correctOption, setCorrectOption] = useState(null);
   const [studentScore, setStudentScore] = useState(0);
@@ -42,7 +44,7 @@ const App = () => {
   return (
     <div className='app'>
       <Header/>
-      <h4> score: {studentScore}</h4>
+      {/* <h4> score: {studentScore}</h4> */}
       <Main>
       {loadingState === "loading" && <Loader />}  
         {error && <Error error={error} />}
@@ -73,7 +75,7 @@ const App = () => {
      
      </>}
 
-     {loadingState ==='finished'&&<FinishedScreen/>}
+     {loadingState ==='finished'&&<FinishedScreen studentScore={studentScore}username={username}quizTotalScore={quizTotalScore}/>}
       </Main>
     </div>
   )
