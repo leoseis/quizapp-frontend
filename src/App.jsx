@@ -23,6 +23,18 @@ const App = () => {
   const [correctOption, setCorrectOption] = useState(null);
   const [studentScore, setStudentScore] = useState(0);
 
+  const studentQuiz = {
+    username:username, score:studentScore
+  }
+
+
+
+
+  function submitQuizToApi(){
+    api.post('submit_quiz/', studentQuiz)
+    .then((res) => console.log(res.data))
+    .catch((err) => console.log(err.message));
+  }
 
 
   useEffect(function () {
@@ -38,6 +50,7 @@ const App = () => {
         setError(err.message)
       });
   }, []);
+
 
 
 
@@ -71,6 +84,7 @@ const App = () => {
      correctOption={correctOption}
      setStudentScore={setStudentScore}
      setLoadingState={setLoadingState}
+     submitQuizToApi={submitQuizToApi}
      />
      
      </>}

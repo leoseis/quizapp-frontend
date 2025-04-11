@@ -8,7 +8,8 @@ const NextButton = ({
   questionIndex,
   correctOption,
   setStudentScore,
-  setLoadingState
+  setLoadingState,
+  submitQuizToApi
 }) => {
   if (selectedOption === null) return null;
 
@@ -23,7 +24,11 @@ const NextButton = ({
 
   function submitQuiz(){
     setLoadingState('finished')
-  }
+    if(selectedOption === correctOption){
+      setStudentScore(curr => curr + 5)
+    }
+    submitQuizToApi()
+    }
 
     
     
