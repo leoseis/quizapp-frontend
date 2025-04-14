@@ -23,14 +23,17 @@ const App = () => {
   const [correctOption, setCorrectOption] = useState(null);
   const [studentScore, setStudentScore] = useState(0);
 
-  const studentQuiz = {
-    username:username, score:studentScore
-  }
+ 
 
 
 
 
-  function submitQuizToApi(){
+  function submitQuizToApi(updatedScore){
+
+ 
+    const studentQuiz = {
+      username:username, score:updatedScore
+    }
     api.post('submit_quiz/', studentQuiz)
     .then((res) => console.log(res.data))
     .catch((err) => console.log(err.message));

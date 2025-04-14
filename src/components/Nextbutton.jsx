@@ -23,13 +23,19 @@ const NextButton = ({
   }
 
   function submitQuiz(){
-    setLoadingState('finished')
+    setLoadingState("finished")
     if(selectedOption === correctOption){
-      setStudentScore(curr => curr + 5)
-    }
-    submitQuizToApi()
-    }
+      setStudentScore(curr => {
+        
+        const updatedScore = curr + 5
+        submitQuizToApi(updatedScore)
 
+        return updatedScore
+      
+      })
+  }
+    
+  }
     
     
 
