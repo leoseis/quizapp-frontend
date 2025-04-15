@@ -92,7 +92,18 @@ const App = () => {
      
      </>}
 
-     {loadingState ==='finished'&&<FinishedScreen studentScore={studentScore}username={username}quizTotalScore={quizTotalScore}/>}
+     {loadingState ==='finished'&&
+     <FinishedScreen 
+     studentScore={studentScore}
+     username={username}
+     quizTotalScore={quizTotalScore}
+     setLoadingState={setLoadingState}
+     setQuestionIndex={ setQuestionIndex}
+     setSelectedOption={setSelectedOption}
+     setCorrectOption={setCorrectOption}
+     setStudentScore={setStudentScore}
+     />}
+
       </Main>
     </div>
   )
