@@ -102,6 +102,7 @@ const App = () => {
      setSelectedOption={setSelectedOption}
      setCorrectOption={setCorrectOption}
      setStudentScore={setStudentScore}
+     setUsername={setUsername}
      />}
 
       </Main>

@@ -7,7 +7,8 @@ const FinishedScreen = ({studentScore,
    setQuestionIndex,
    setSelectedOption,
    setCorrectOption,
-   setStudentScore
+   setStudentScore,
+   setUsername
 
   }) => {
 
@@ -19,6 +20,7 @@ function restartQuiz(){
   setSelectedOption(null)
   setCorrectOption(null)
   setStudentScore(0)
+  setUsername("")
 }
   return (
     <>
