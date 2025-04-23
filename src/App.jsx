@@ -8,6 +8,7 @@ import Question from './components/Question';
 import api from './api';
 import NextButton from './components/Nextbutton';
 import FinishedScreen from './components/FinishedScreen';
+import Progress from './components/Progress';
 
 
 const App = () => {
@@ -72,6 +73,7 @@ const App = () => {
      />}
      {loadingState === 'active' &&
      <> 
+     <Progress/>
      <Question
       question={questions[questionIndex]}
      selectedOption={selectedOption}
