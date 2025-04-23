@@ -3,9 +3,9 @@ import React from 'react'
 const Progress = () => {
   return (
     <header className="progress">
-    <progress max value />
+    <progress max= "5"value="4"/>
     <p>
-      Question <strong></strong> 
+      Question <strong>4</strong> /5 
     </p>
 
     <p>
