@@ -21,6 +21,7 @@ function restartQuiz(){
   setCorrectOption(null)
   setStudentScore(0)
   setUsername("")
+  localStorage.removeItem("username")
 }
   return (
     <>
