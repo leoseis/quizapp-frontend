@@ -1,15 +1,15 @@
 import React from 'react'
 
-const Progress = () => {
+const Progress = ({  questionIndex, username, numQuestions}) => {
   return (
     <header className="progress">
-    <progress max= "5"value="4"/>
+    <progress max= {numQuestions}value={questionIndex}/>
     <p>
-      Question <strong>4</strong> /5 
+    Question <strong>{questionIndex + 1}</strong> / {numQuestions}
     </p>
 
     <p>
-      Hi, azuka <strong style={{ textTransform: "uppercase" }}></strong>
+      Hi,<strong style={{ textTransform: "uppercase" }}>{username}</strong>
     </p>
   </header>
   )

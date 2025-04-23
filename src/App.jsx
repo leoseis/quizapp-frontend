@@ -73,7 +73,8 @@ const App = () => {
      />}
      {loadingState === 'active' &&
      <> 
-     <Progress/>
+     <Progress questionIndex={questionIndex}
+     username={username}numQuestions={numQuestions}/>
      <Question
       question={questions[questionIndex]}
      selectedOption={selectedOption}
