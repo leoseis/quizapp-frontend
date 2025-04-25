@@ -9,7 +9,8 @@ import api from './api';
 import NextButton from './components/Nextbutton';
 import FinishedScreen from './components/FinishedScreen';
 import Progress from './components/Progress';
-
+import Timer from './components/Timer';
+import Footer from './components/Footer';
 
 const App = () => {
   const [loadingState, setLoadingState] = useState("loading");
@@ -81,7 +82,9 @@ const App = () => {
      setSelectedOption={setSelectedOption}
      setCorrectOption={setCorrectOption}
      />
-    <NextButton
+     <Footer>
+      <Timer/>
+      <NextButton
      selectedOption={selectedOption}
      setQuestionIndex={setQuestionIndex}
      setSelectedOption={setSelectedOption} 
@@ -92,6 +95,9 @@ const App = () => {
      setLoadingState={setLoadingState}
      submitQuizToApi={submitQuizToApi}
      />
+      
+     </Footer>
+    
      
      </>}
 
