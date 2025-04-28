@@ -19,11 +19,14 @@ const App = () => {
   const [questionIndex, setQuestionIndex] = useState(0);
   const [questions, setQuestions] = useState([]);
   const scorePerQuestion = 5;
+  const secondsPerQuestion = 10;
   const numQuestions = questions.length;
   const quizTotalScore = numQuestions * scorePerQuestion;
   const [selectedOption, setSelectedOption] = useState(null);
   const [correctOption, setCorrectOption] = useState(null);
   const [studentScore, setStudentScore] = useState(0);
+  const [timeRemaining,setTimeRemaining] = useState(null);
+  
 
  
 
@@ -71,6 +74,9 @@ const App = () => {
     setUsername={setUsername}
      numQuestions={numQuestions}
      setLoadingState={setLoadingState}
+     setTimeRemaining={setTimeRemaining}
+     secondsPerQuestion={secondsPerQuestion}
+     
      />}
      {loadingState === 'active' &&
      <> 
@@ -83,7 +89,11 @@ const App = () => {
      setCorrectOption={setCorrectOption}
      />
      <Footer>
-      <Timer/>
+      <Timer
+       timeRemaining={timeRemaining}
+      
+      />
+     
       <NextButton
      selectedOption={selectedOption}
      setQuestionIndex={setQuestionIndex}

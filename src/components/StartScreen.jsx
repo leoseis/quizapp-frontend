@@ -4,7 +4,8 @@ import Error from "./Error";
  
 
 
-const StartScreen = ({ numQuestions, username, setUsername,setLoadingState }) => {
+const StartScreen = ({ numQuestions, username, setUsername,
+  setLoadingState,setTimeRemaining,secondsPerQuestion }) => {
   const studentUsername = { username: username };
   const [error, setError] = useState(null);
 
@@ -14,6 +15,7 @@ const StartScreen = ({ numQuestions, username, setUsername,setLoadingState }) =>
         console.log(res.data); 
         setLoadingState('active')
         localStorage.setItem("username",username)
+        setTimeRemaining(secondsPerQuestion*numQuestions)
       })
       .catch((err) => {
         setError(err.response.data.error);
