@@ -91,6 +91,8 @@ const App = () => {
      <Footer>
       <Timer
        timeRemaining={timeRemaining}
+       setTimeRemaining= {setTimeRemaining}
+       setLoadingState={setLoadingState}
       
       />
      

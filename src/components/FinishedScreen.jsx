@@ -32,7 +32,7 @@ function restartQuiz(){
       </p>
       <p className="highscore">(HighScore: {studentScore} points) ({pecentage}%)</p>
 
-      <button className=" btn btn-ui"onClick={restartQuiz} >Restart Quiz</button>
+      <button className=" btn btn-ui"onClick={restartQuiz} >Restart Quiz now</button>
     </>
   );
 };
