@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 
-const Timer = ({timeRemaining,  setTimeRemaining,setLoadingState}) => {
+const Timer = ({timeRemaining,  setTimeRemaining,setLoadingState,submitQuizToApi,studentScore}) => {
 
   const mins = Math.floor(timeRemaining / 60);
   const secs = timeRemaining % 60;
@@ -12,11 +12,11 @@ const Timer = ({timeRemaining,  setTimeRemaining,setLoadingState}) => {
     
     return () => clearInterval(id);
   },[])
-  if (timeRemaining === 0) {
-    setLoadingState('finished')
-    
-  }
   
+  if (timeRemaining === 0) {
+    setLoadingState("finished");
+    submitQuizToApi(studentScore)
+  }
   return (
     <div className='timer'>{mins < 10 && "0"}{mins}: {secs < 10 && "0"}{secs }</div>
   )

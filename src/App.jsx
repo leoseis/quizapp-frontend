@@ -33,16 +33,17 @@ const App = () => {
 
 
 
-  function submitQuizToApi(updatedScore){
-
- 
+  function submitQuizToApi(updatedScore) {
     const studentQuiz = {
-      username:username, score:updatedScore
-    }
-    api.post('submit_quiz/', studentQuiz)
-    .then((res) => console.log(res.data))
-    .catch((err) => console.log(err.message));
+      username: localStorage.getItem('username'),
+      score: updatedScore,
+    };
+    api
+      .post("submit_quiz/", studentQuiz)
+      .then((res) => console.log(res.data))
+      .catch((err) => console.log(err.message));
   }
+
 
 
   useEffect(function () {
@@ -93,7 +94,8 @@ const App = () => {
        timeRemaining={timeRemaining}
        setTimeRemaining= {setTimeRemaining}
        setLoadingState={setLoadingState}
-      
+       submitQuizToApi={submitQuizToApi}
+       studentScore={studentScore}
       />
      
       <NextButton
