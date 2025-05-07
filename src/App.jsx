@@ -44,6 +44,7 @@ const App = () => {
   function reloadPage(){
     setLoadingState("finished")
     getQuestion()
+    submitQuizToApi(studentScore)
   }
 
   function submitQuizToApi(updatedScore) {
