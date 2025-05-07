@@ -1,7 +1,6 @@
 import React from 'react'
 
 const FinishedScreen = ({studentScore,
-  username,
   quizTotalScore,
    setLoadingState,
    setQuestionIndex,
@@ -13,6 +12,8 @@ const FinishedScreen = ({studentScore,
   }) => {
 
 const pecentage =(studentScore/quizTotalScore)* 100
+const username = localStorage.getItem("username")
+
 
 function restartQuiz(){
   setLoadingState('ready')

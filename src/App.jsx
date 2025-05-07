@@ -15,7 +15,7 @@ import Footer from './components/Footer';
 const App = () => {
   const [loadingState, setLoadingState] = useState("loading");
   const [error, setError] = useState(null);
-  const [username, setUsername] = useState(null);
+  const [username, setUsername] = useState("");
   const [questionIndex, setQuestionIndex] = useState(0);
   const [questions, setQuestions] = useState([]);
   const scorePerQuestion = 5;
@@ -28,10 +28,23 @@ const App = () => {
   const [timeRemaining,setTimeRemaining] = useState(null);
   
 
- 
+  function getQuestion() {
+    api
+      .get("questions")
+      .then((res) => {
+        setQuestions(res.data);
+      })
+
+      .catch((err) => {
+        console.log(err.message);
+      });
+  }
 
 
-
+  function reloadPage(){
+    setLoadingState("finished")
+    getQuestion()
+  }
 
   function submitQuizToApi(updatedScore) {
     const studentQuiz = {
@@ -47,6 +60,9 @@ const App = () => {
 
 
   useEffect(function () {
+    if (localStorage.getItem("username")) {
+      return reloadPage()
+    }
     api .get("questions")
       .then((res) => {
         console.log(res.data);
@@ -118,7 +134,6 @@ const App = () => {
      {loadingState ==='finished'&&
      <FinishedScreen 
      studentScore={studentScore}
-     username={username}
      quizTotalScore={quizTotalScore}
      setLoadingState={setLoadingState}
      setQuestionIndex={ setQuestionIndex}
