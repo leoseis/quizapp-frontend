@@ -76,7 +76,21 @@ const App = () => {
         setError(err.message)
       });
   }, []);
+  
+     // warning not to reload the page or refresh the browser
+  useEffect(() => {
+    const handleBeforeUnload = (event) => {
+      event.preventDefault();
+      event.returnValue = ""; // Required for some browsers to display the warning
+    };
 
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
+  }, []);
 
 
 
