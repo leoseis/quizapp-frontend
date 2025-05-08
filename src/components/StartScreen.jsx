@@ -26,8 +26,8 @@ const StartScreen = ({ numQuestions, username, setUsername,
 
   return (
     <div className="start">
-      <h2>Welcome to The React Quiz!</h2>
-      <h3>{numQuestions} questions to test your React mastery</h3>
+      <h2>Welcome to Quiz Mastery!</h2>
+      <h3>{numQuestions} Quiz questions test your knowledge</h3>
       {error && <Error error={error} />}
       <input
         placeholder="Enter username"
